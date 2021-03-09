@@ -1,0 +1,25 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+body{
+  background-color: azure;
+}
+
+/* Header */
+header{
+  background-color: lightblue;
+  color: darkblue;
+}
+h1{
+  padding: 20px 30px 10px 30px;
+}
+ul{
+  padding: 10px 30px 20px 30px;
+}
+span{
+  padding: 10px 30px 10px 30px;
+}

@@ -2,9 +2,37 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="css/style.css">
     <title>Easy Campo Minato</title>
   </head>
   <body>
+
+    <header>
+      <h1>Campo Minato</h1>
+      <ul>
+        <li>Il computer genera 16 numeri casuali che non sono duplicati.</li>
+        <li>In seguito deve chiedere all'utente di inserire dei numeri che non possono essere duplicati.</li>
+        <li>La partita termina quando l'utente inserisce un numero "vietato" (ovvero nella lista dei numeri generati casualmente), oppure se ha inserito tutti i restanti numeri.</li>
+        <li>Alla fine della partita il software comunica il punteggio dell'utente (ovvero quante volte ha inserito un numero consentito).</li>
+      </ul>
+
+      <span>Scegli la difficoltà che più ti aggrada:</span>
+      <ul>
+        <li>0 : range = 1, 100</li>
+        <li>1 : range = 1, 80</li>
+        <li>2 : range = 1, 50</li>
+      </ul>
+    </header>
+
+    <main>
+      <h2 id="messaggio-finale"></h2>
+      <h3 id="numeri-inseriti"></h3>
+      <h4 id="lista-utente"></h4>
+      <h4 id="lista-random"></h4>
+    </main>
+
+
+
     <script src="js/script.js" charset="utf-8"></script>
   </body>
 </html>

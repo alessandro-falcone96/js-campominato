@@ -56,15 +56,25 @@ function checkLength(listPlayerNumbers, listRandomNumbers) {
     console.log("Complimenti, hai vinto!")
     console.log("Lista Numeri Utente: " + listPlayerNumbers);
     console.log("Lista Numeri Random: " + listRandomNumbers);
+
+    document.getElementById('messaggio-finale').innerHTML = "Complimenti, hai vinto!";
+    document.getElementById('lista-utente').innerHTML = "Lista Numeri Utente: " + listPlayerNumbers;
+    document.getElementById('lista-random').innerHTML = "Lista Numeri Random: " + listRandomNumbers;
+
   } else {
     console.log("Hai inserito un numero che era presente nella lista dei numeri random. Hai perso!")
+    document.getElementById('messaggio-finale').innerHTML = "Hai inserito un numero che era presente nella lista dei numeri random. Hai perso!";
     if (listPlayerNumbers.length == 1) {
       console.log("Hai inserito solamente 1 numero.")
+      document.getElementById('numeri-inseriti').innerHTML = "Hai inserito solamente 1 numero.";
     } else {
       console.log("Hai inserito " + listPlayerNumbers.length + " numeri.")
+      document.getElementById('numeri-inseriti').innerHTML = "Hai inserito " + listPlayerNumbers.length + " numeri.";
     }
     console.log("Lista Numeri Utente: " + listPlayerNumbers);
     console.log("Lista Numeri Random: " + listRandomNumbers);
+    document.getElementById('lista-utente').innerHTML = "Lista Numeri Utente: " + listPlayerNumbers;
+    document.getElementById('lista-random').innerHTML = "Lista Numeri Random: " + listRandomNumbers;
   }
 }
 
