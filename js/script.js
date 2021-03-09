@@ -43,6 +43,11 @@ function checkLength(listPlayerNumbers, listRandomNumbers) {
     console.log("Lista Numeri Random: " + listRandomNumbers);
   } else {
     console.log("Hai inserito un numero che era presente nella lista dei numeri random. Hai perso!")
+    if (listPlayerNumbers.length == 1) {
+      console.log("Hai inserito solamente 1 numero.")
+    } else {
+      console.log("Hai inserito " + listPlayerNumbers.length + " numeri.")
+    }
     console.log("Lista Numeri Utente: " + listPlayerNumbers);
     console.log("Lista Numeri Random: " + listRandomNumbers);
   }
