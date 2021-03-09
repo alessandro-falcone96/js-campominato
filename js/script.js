@@ -2,11 +2,26 @@
 var listRandomNumbers = [];
 var listPlayerNumbers = [];
 var n = 0;
+var gameMode = 0;
+var maxRange = 0;
+
+// L'utente sceglie la modalità di gioco (difficoltà)
+do {
+  gameMode = parseInt(prompt("Inserisci la game mode: "));
+} while ((gameMode < 0) || (gameMode > 2));
+
+if (gameMode == 0) {
+  maxRange = 100;
+} else if (gameMode == 1) {
+  maxRange = 80;
+} else {
+  maxRange = 50;
+}
 
 // Creo la funzione che genera 16 numeri random tra 1 e 100 (che non sono duplicati)
-function randomNumbers(n, listRandomNumbers) {
+function randomNumbers(n, maxRange, listRandomNumbers) {
   do {
-    n = Math.floor(Math.random() * 100) + 1;
+    n = Math.floor(Math.random() * maxRange) + 1;
     if (listRandomNumbers.includes(n) == false) {
       listRandomNumbers.push(n);
     }
@@ -16,12 +31,12 @@ function randomNumbers(n, listRandomNumbers) {
 }
 
 // Chiamo la funzione randomNumbers
-randomNumbers(n, listRandomNumbers);
+randomNumbers(n, maxRange, listRandomNumbers);
 
 // creo la funzione che fa aggiungere numeri (non duplicati) dall'utente finchè non "sbaglia" o finchè non finisce i tentativi
-function playerNumbers(n, listPlayerNumbers) {
+function playerNumbers(n, maxRange, listPlayerNumbers) {
   do {
-    n = parseInt(prompt("Inserisci un numero tra 1 e 100: "));
+    n = parseInt(prompt("Inserisci un numero tra 1 e " + maxRange + ":"));
     if ((listPlayerNumbers.includes(n) == false) && (n <= 100) && (n > 0)) {
       listPlayerNumbers.push(n);
     } else {
@@ -33,7 +48,7 @@ function playerNumbers(n, listPlayerNumbers) {
 }
 
 // Chiamo la funzione playerNumbers
-playerNumbers(n, listPlayerNumbers);
+playerNumbers(n, maxRange, listPlayerNumbers);
 
 // Creo la funzione che controlla se l'utente ha vinto o perso e fa uscire un messaggio
 function checkLength(listPlayerNumbers, listRandomNumbers) {
