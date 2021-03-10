@@ -52,17 +52,20 @@ playerNumbers(n, maxRange, listPlayerNumbers);
 
 // Creo la funzione che controlla se l'utente ha vinto o perso e fa uscire un messaggio
 function checkLength(listPlayerNumbers, listRandomNumbers) {
-  if (listPlayerNumbers.length == 82) {
+  if (listPlayerNumbers.length == (maxRange * 0.20)) {
     console.log("Complimenti, hai vinto!")
     console.log("Lista Numeri Utente: " + listPlayerNumbers);
     console.log("Lista Numeri Random: " + listRandomNumbers);
 
+    document.getElementById('messaggio-finale').style.color = "green";
     document.getElementById('messaggio-finale').innerHTML = "Complimenti, hai vinto!";
     document.getElementById('lista-utente').innerHTML = "Lista Numeri Utente: " + listPlayerNumbers;
     document.getElementById('lista-random').innerHTML = "Lista Numeri Random: " + listRandomNumbers;
 
   } else {
     console.log("Hai inserito un numero che era presente nella lista dei numeri random. Hai perso!")
+
+    document.getElementById('messaggio-finale').style.color = "red";
     document.getElementById('messaggio-finale').innerHTML = "Hai inserito un numero che era presente nella lista dei numeri random. Hai perso!";
     if (listPlayerNumbers.length == 1) {
       console.log("Hai inserito solamente 1 numero.")
